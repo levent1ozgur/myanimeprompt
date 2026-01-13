@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Anime Prompt - AI Anime Recommendation Prompt Generator</title>
+  <meta name="description" content="My Anime Prompt helps anime fans generate a structured markdown prompt from their MyAnimeList export file. Use it to get personalized anime recommendations from your completed anime list!">
+  <meta name="keywords" content="anime recommendations, personalized anime recommendations, MAL anime recommendations, AI anime recommendations, anime recommendation prompt generator, anime suggestion tool, get anime recommendations from my MAL history, convert MAL list to anime recommendations, free anime recommendation tool">
+  <meta name="author" content="Levent Özgür">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://myanimeprompt.netlify.app/">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="4ssE6PbtD2NfmYEOclJ8VqXkpp6sGuIO6bZpnupls8Q" />
+  <!-- Structured Data for SEO (Schema.org) -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "My Anime Prompt",
+      "url": "https://myanimeprompt.netlify.app/",
+      "description": "My Anime Prompt converts your MyAnimeList export into a markdown prompt ready for any large language model, delivering personalized anime recommendations based on your watch history."
+    }
+  </script>
+  <link rel="shortcut icon" type="image/png" href="css/favicon.png">
+  <!-- Link to CSS file -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo" style="text-align: center;">
+        <img src="css/favicon.png" alt="MyAnimePrompt Logo" style="width: 50px; height: 50px;" itemprop="image">
+      </div>
+      <h1>My Anime Prompt</h1>
+      <p>
+        Generate a structured markdown prompt from your MyAnimeList (MAL) export file and use on any Large Language Model (LLM) (like ChatGPT) to receive anime recommendations based on your watch history.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container" id="convert-section">
+      <p class="export">⇨ <a href="https://myanimelist.net/panel.php?go=export" target="_blank">Export Your MyAnimeList Data</a> ⇦</p>
+      <label for="fileInput">Upload your MyAnimeList (MAL) data:</label><br>
+      <input type="file" id="fileInput" accept=".xml" />
+      <button id="convertBtn" aria-label="Convert XML to Markdown">Convert to Markdown</button>
+      <textarea id="output" readonly placeholder="Generated prompt will appear here..."></textarea>
+      <button id="copyBtn" aria-label="Copy Markdown Prompt">Copy Prompt</button>
+    </div>
+
+    <section class="container" id="how-it-works">
+      <h2 id="-how-the-website-works-"><strong>How the Website Works</strong></h2>
+      <p>This website is designed for anime fans who want personalized recommendations based on their MyAnimeList (MAL) watch history. Here’s how it works:</p>
+      <h3 id="-1-uploading-the-mal-export-file-"><strong>1. Uploading the MAL Export File</strong></h3>
+      <ul>
+        <li>
+          <p>First, export your anime list from MyAnimeList in <strong>XML format</strong>.</p>
+        </li>
+        <li>
+          <p>Then, upload this XML file to the website using the <strong>Browse</strong> button.</p>
+        </li>
+      </ul>
+      <h3 id="-2-processing-the-file-"><strong>2. Processing the File</strong></h3>
+      <ul>
+        <li>
+          <p>When you click <strong>&quot;Convert&quot;</strong>, the website reads and parses the XML file.</p>
+        </li>
+        <li>
+          <p>It <strong>filters out only completed anime</strong> from your list.</p>
+        </li>
+        <li>
+          <p>It extracts the <strong>titles and ratings</strong> of these completed anime.</p>
+        </li>
+        <li>
+          <p>If multiple entries share a similar base title (e.g., <em>Attack on Titan</em> and <em>Attack on Titan: Final Season</em>), they are <strong>grouped together</strong>, and their average rating is calculated.</p>
+        </li>
+      </ul>
+      <h3 id="-3-generating-a-markdown-based-ai-prompt-"><strong>3. Generating a Markdown-Based AI Prompt</strong></h3>
+      <ul>
+        <li>
+          <p>The processed data is formatted into a <strong>Markdown prompt</strong>.</p>
+        </li>
+        <li>
+          <p>The prompt describes your anime preferences and includes a <strong>table of watched anime with ratings</strong>.</p>
+        </li>
+        <li>
+          <p>The AI is instructed to recommend 10 new anime based on genres and themes from your highly-rated shows.</p>
+        </li>
+      </ul>
+      <h3 id="-4-copying-the-prompt-"><strong>4. Copying the Prompt</strong></h3>
+      <ul>
+        <li>
+          <p>Click <strong>&quot;Copy Prompt&quot;</strong> to copy the generated Markdown text.</p>
+        </li>
+        <li>
+          <p>Then, paste it into a <strong>Large Language Model (LLM)</strong> (like ChatGPT) to receive anime recommendations.</p>
+        </li>
+      </ul>
+
+    </section>
+
+    <section class="container" id="features">
+      <h2>Key Features</h2>
+      <p>✅ <strong>Simple Interface</strong> – Just upload, convert, and copy. </p>
+      <p>✅ <strong>AI-Optimized Prompt</strong> – Ensures better recommendations. </p>
+      <p>✅ <strong>Title Grouping</strong> – Merges similar titles for cleaner data. </p>
+      <p>✅ <strong>Excludes Sequels/Prequels</strong> – Focuses on fresh recommendations. </p>
+      <p>In short, this tool automates the process of analyzing your MAL history and formatting it into an AI-friendly structure, making it easy to get <strong>highly personalized anime recommendations</strong>.</p>
+    </section>
+  </main>
+
+  <footer id="footer">
+     © 2025 <a href="https://myanimeprompt.netlify.app/">My Anime Prompt</a> by
+    <a href="https://github.com/levent1ozgur" target="_blank">Levent Özgür</a><br>
+    <p>Check out <a href="https://findmyseiyuu.netlify.app/" target="_blank">Find My Seiyuu</a></p>
+
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cf738bb31e03465caedf6a4b892bdedf"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>
